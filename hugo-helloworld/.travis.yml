@@ -1,14 +1,15 @@
+jobs:
+  include:
+    - stage: Test
+      name: test (hugo-helloworld)
 
-- stage: Test
-  name: test (hugo-helloworld)
+      script:
+        - hugo -D
 
-  script:
-    - hugo -D
-
-  deploy:
-    - provider: pages
-      skip_cleanup: true
-      local_dir: hugo-helloworld/public
-      github_token: $GITHUB_TOKEN
-      on:
-        branch: master
+      deploy:
+        - provider: pages
+          skip_cleanup: true
+          local_dir: hugo-helloworld/public
+          github_token: $GITHUB_TOKEN
+          on:
+            branch: master
