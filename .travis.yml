@@ -1,49 +1,19 @@
 # https://docs.travis-ci.com/user/docker/
 # https://docs.travis-ci.com/user/environment-variables/
 # https://docs.travis-ci.com/user/job-lifecycle/
+# https://docs.travis-ci.com/user/conditional-builds-stages-jobs/
+# https://docs.travis-ci.com/user/conditions-v1
 
 # You can import up to 25 other configs in total.
 os: linux
-
-env:
-  global:
-    # SLACK_TOKEN:
-    - secure: "bcNJgbOuCVSHPjdO2G5x1gQ+E1WbEQly9Rs7FbyVBXquRivtRrGVLqWSjk/jxKrOb1pw+T/0b6GJijBxisNfEnRyHEyNM3UvT8+l02DDPa2gq50RZdr3gz/0DlnaSYNpYK5VRYzHVlE9wav5lmTqpN/lBL6DpcQ6UnzEDcnOnMA3lf6R0Wl3DbQp22Tk8deMD0TANeslrcMjMOL/tMkXEvAiZ41VuoxODsVVhqIig446wD1s77VRyoaLqHEUbH0MYIuHNgxFZrzsj6SbzTTdcUTby4Z16lWG6tcTU1lIOyV87tA+oW84uDl0LzUIbb2o2O5KXoBvxpcRi93Hd95YU5/6eexaEaHt1Ui55jKpjsoxcu+Pti0SSdlryOrYbF+lvurEHzDFI2RX5LvU6Uz3QxIgAzWUwfRBvnvZypD8Lg63F6Vlh/C6cEk2hwAgPkpy4iPH/Pu9v/ciQvvy0o/a1Ov4DLq9tSDnw7T2Hf+XdqDwTB9Xjvt7zrwTB9sopHiaw9Y0I1SxPFxNIaQYmVzkgSmEk5zh6nW/LRX+vRXQv3lXHEqMysKpOVt4gUB1tML/nYfXHycK7akaaNTQ0fVzMD8p0a3pYSEQOJPjkwyFcdGC0AOsPRhv5muZ7bqe337+dC0Uj6456d2Md/bVGTpych4okKooHT0ruJvA+fEQdX0="
 
 language: node_js
 
 node_js:
   - 12
-
 cache:
   - npm
   - pip
 
 script:
   - echo "helloworld"
-
-jobs:
-  include:
-    - stage: Test
-      name: bash_travis_yml_template
-      script:
-        - echo "helloworld"
-
-    # # /home/logic/_workspace/travis-playlist/travis-build-merger/.travis.yml
-    - stage: Merge
-      script:
-        - wget https://raw.githubusercontent.com/louiscklaw/travis-playlist/master/travis-build-merger/merge_if_success.sh
-        - bash merge_if_success.sh
-
-stages:
-  - Unit_test
-  - Test
-  - Build
-  - Deploy
-  - Integration_to_other_repo
-  - Publish_dashboard
-  - Merge
-
-import:
-  - credentials.yml
-  - hugo-helloworld/.travis.yml
