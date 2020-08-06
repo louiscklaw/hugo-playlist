@@ -5,6 +5,18 @@
 # You can import up to 25 other configs in total.
 os: linux
 
+language: node_js
+
+node_js:
+  - 12
+
+cache:
+  - npm
+  - pip
+
+script:
+  - echo "helloworld"
+
 jobs:
   include:
     - stage: Test
