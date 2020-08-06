@@ -11,9 +11,13 @@ language: node_js
 
 node_js:
   - 12
+
 cache:
   - npm
-  - pip
 
 script:
   - echo "helloworld"
+
+notifications:
+  slack:
+    secure: "XE7jiIf93IcRd518j3ZXZCBBe/3Ka1tGz29IVekKq2rWU89dxksY5a/I9UOJPFN1eIprSrp+UMWqSNK3FAkjuvCOAOzkuJeUO/PBDy14Kqj+ZSJi2G0ANhRzyhPmGuwbXErwWDBS9Fv3tpXA/dP5OKP4B3xAuHeuZkC24vIxlapDNlEBDHpuT1QX+3rWAWoM/DoG5zHUk08C7MZi95GTFxZPhhCqlE/WHi4dLlBW9fCzf9RMKG3bURDJ4YdkG3JdX/zP5OkyeBiVVlsoh2B6TFdN+IKQoJva5oi5NBx5SnnPyRuhfkAr8DHIRM09LFmMcwFcJvS96u+uc66x9QVIzURx0IP0owMRDhTnKT8gdfQwVKfsHlHwTaITm9hl5Q3fNFJcbpBIkCqJa5mX15aTP0CzGsQrs/TipIkIcamH1FTY0L1C0Y3ZWgtqPNflVkDu22yyDe8EDNScPwzhoaP1CkLJfwO70DPGDlXq9MARzxsMygkKf/W28aQBZL2Xwd7iQRQthWRfVUK+mSpgvNieHAsZZzCzyV9x02V38TP6J4LRv6w+CMchAbkqNx1VUplisCjlwf064KNomyKI1aVTTLYjvJK7GDi5281yEfQSpvpaN8QOCCcERe1e0jN9w1DG+IiCzYrOLyfKlrBBar/DvLv+RA2ctefs3EfRgGDPa2Y="
