@@ -18,15 +18,11 @@ cache:
 script:
   - echo "helloworld"
 
-jobs:
-  include:
-    # /home/logic/_workspace/travis-playlist/travis-build-merger/.travis.yml
-    - stage: Merge
-      script:
-        - wget https://raw.githubusercontent.com/louiscklaw/travis-playlist/master/travis-build-merger/merge_if_success.sh
-        - bash merge_if_success.sh
+notifications:
+  slack:
+    secure: "XE7jiIf93IcRd518j3ZXZCBBe/3Ka1tGz29IVekKq2rWU89dxksY5a/I9UOJPFN1eIprSrp+UMWqSNK3FAkjuvCOAOzkuJeUO/PBDy14Kqj+ZSJi2G0ANhRzyhPmGuwbXErwWDBS9Fv3tpXA/dP5OKP4B3xAuHeuZkC24vIxlapDNlEBDHpuT1QX+3rWAWoM/DoG5zHUk08C7MZi95GTFxZPhhCqlE/WHi4dLlBW9fCzf9RMKG3bURDJ4YdkG3JdX/zP5OkyeBiVVlsoh2B6TFdN+IKQoJva5oi5NBx5SnnPyRuhfkAr8DHIRM09LFmMcwFcJvS96u+uc66x9QVIzURx0IP0owMRDhTnKT8gdfQwVKfsHlHwTaITm9hl5Q3fNFJcbpBIkCqJa5mX15aTP0CzGsQrs/TipIkIcamH1FTY0L1C0Y3ZWgtqPNflVkDu22yyDe8EDNScPwzhoaP1CkLJfwO70DPGDlXq9MARzxsMygkKf/W28aQBZL2Xwd7iQRQthWRfVUK+mSpgvNieHAsZZzCzyV9x02V38TP6J4LRv6w+CMchAbkqNx1VUplisCjlwf064KNomyKI1aVTTLYjvJK7GDi5281yEfQSpvpaN8QOCCcERe1e0jN9w1DG+IiCzYrOLyfKlrBBar/DvLv+RA2ctefs3EfRgGDPa2Y="
 
-import:
-  - credentials.yml
-  - hugo-helloworld/.travis.yml
-  # - liva-hugo-tryout/.travis.yml
+env:
+  global:
+    # SLACK_TOKEN:
+    - secure: "RB7/uwyOU+l8osn5UmPW3dK4t4GN1fpCfBBalQKaFU383MkUt6wgzEm1V8/aFo9kT3Yqs1x3CJTNdFsGVG2Q9GYc9NpBF4gzvAfOHrPlFthEYvg1/YdgAKvHHB8M8Wy+Llt5Ik9cSRrU4F3OIp6pr7qpOkyGCh+aPhQDcW51pONo9KLuYpxtq3zJ9hY92ApauvlSejyxj8AZf3i1ezS2kmUd/0oNXFE44WbpgT5iv1IOaamsESVJcrFUhV0WxytuS+jtLLD1CQ7m/UO2512tuRpUv2FbsyHZCcgiQN/BugzNpUbhf4zPDu7D4nWXZsauf8FiSF1bi5mvxxuZIhlYyzfWYb+zkmHYlB1JxxUoyhV9s0BfVxcZ6ZnDi/WP9SEx+0/9sAClguosAuznd+CKq5txDCD+vTQfqPeeJuD0cij11aO0PL7X9FeUBWnPbeWQR5gc5hOYAo072FrigNTjOHCYmo/fNu1SZgQYgHWRZeOKe+oI0AHRQU4p7lVHnZoXHhb3L1lzCtZFvyMqzIp818LoGY6m2FnnRDKANSlIOcLTjAnPBQoYWNNLnF9w8K1gVPPhEwsf+mN4z/N6K30hP3G2soIkx917ly6zuXVyBIW5k68FXPd7upPZaIyz7ukYXl9EhgWhpxH86B1guX8AQAv1mdKQzn3tdNEJelWXFmQ="
