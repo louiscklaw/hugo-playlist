@@ -7,7 +7,9 @@ jobs:
         - sudo dpkg -i ./hugo_extended_0.74.3_Linux-64bit.deb
 
       script:
-        - hugo -D
+        - cd hugo-helloworld
+        -   hugo -D
+        - cd ..
 
       deploy:
         - provider: pages
