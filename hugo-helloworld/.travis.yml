@@ -1,0 +1,14 @@
+
+- stage: Test
+  name: test (hugo-helloworld)
+
+  script:
+    - hugo -D
+
+  deploy:
+    - provider: pages
+      skip_cleanup: true
+      local_dir: hugo-helloworld/public
+      github_token: $GITHUB_TOKEN
+      on:
+        branch: master

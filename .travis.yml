@@ -27,5 +27,6 @@ stages:
   - Publish_dashboard
   - Merge
 
-# import:
-#   - credentials.yml
+import:
+  - credentials.yml
+  - hugo-helloworld/.travis.yml
