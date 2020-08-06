@@ -18,6 +18,25 @@ cache:
 script:
   - echo "helloworld"
 
+
+stages:
+  - name: Unit_test
+  - Test
+  - Build
+  - Deploy
+
+  - name: Integration_to_other_repo
+    if: branch = develop
+
+  - name: Publish_dashboard
+    if: branch = master
+
+  - Merge
+    if: branch != master
+
+  - Cron
+
+
 import:
   - credentials.yml
   - hugo-helloworld/.travis.yml
