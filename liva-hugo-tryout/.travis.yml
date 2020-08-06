@@ -1,7 +1,7 @@
 jobs:
   include:
     - stage: Test
-      name: test (hugo-helloworld)
+      name: test (liva-hugo-tryout)
 
       install:
         - sudo dpkg -i ./hugo_extended_0.74.3_Linux-64bit.deb

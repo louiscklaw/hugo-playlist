@@ -18,7 +18,7 @@ cache:
 jobs:
   include:
     - stage: Build
-      name: build (gatsby-helloworld)
+      name: build (hugo-helloworld)
       script:
         - echo 'helloworld'
 
