@@ -44,7 +44,7 @@ stages:
   - name: Merge
     if: branch != master
 
-  - Cron
+  - name: Cron
 
 
 import:
