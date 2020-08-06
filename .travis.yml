@@ -31,9 +31,9 @@ jobs:
 
 stages:
   - name: Unit_test
-  - Test
-  - Build
-  - Deploy
+  - name: Test
+  - name: Build
+  - name: Deploy
 
   - name: Integration_to_other_repo
     if: branch = develop
