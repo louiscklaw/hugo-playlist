@@ -20,3 +20,5 @@ script:
 
 import:
   - credentials.yml
+  - hugo-helloworld/.travis.yml
+  - liva-hugo-tryout/.travis.yml
