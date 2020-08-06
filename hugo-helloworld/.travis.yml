@@ -3,6 +3,9 @@ jobs:
     - stage: Test
       name: test (hugo-helloworld)
 
+      install:
+        - sudo dpkg -i ./hugo_extended_0.74.3_Linux-64bit.deb
+
       script:
         - hugo -D
 
