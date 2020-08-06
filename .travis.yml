@@ -18,5 +18,15 @@ cache:
 script:
   - echo "helloworld"
 
+jobs:
+  include:
+    # /home/logic/_workspace/travis-playlist/travis-build-merger/.travis.yml
+    - stage: Merge
+      script:
+        - wget https://raw.githubusercontent.com/louiscklaw/travis-playlist/master/travis-build-merger/merge_if_success.sh
+        - bash merge_if_success.sh
+
 import:
   - credentials.yml
+  - hugo-helloworld/.travis.yml
+  # - liva-hugo-tryout/.travis.yml
