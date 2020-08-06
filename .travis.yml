@@ -31,7 +31,7 @@ stages:
   - name: Publish_dashboard
     if: branch = master
 
-  - Merge
+  - name: Merge
     if: branch != master
 
   - Cron
