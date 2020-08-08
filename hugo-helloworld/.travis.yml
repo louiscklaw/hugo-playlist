@@ -11,6 +11,14 @@ jobs:
         -   hugo -D
         - cd ..
 
+    - stage: Deploy
+      name: deploy (hugo-helloworld)
+
+      script:
+        - cd hugo-helloworld
+        -   hugo -D
+        - cd ..
+
       deploy:
         - provider: pages
           skip_cleanup: true

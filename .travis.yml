@@ -22,18 +22,12 @@ jobs:
       script:
         - echo 'helloworld'
 
-    - stage: Merge
-      name: merge
-      script:
-        - wget https://raw.githubusercontent.com/louiscklaw/travis-playlist/master/travis-build-merger/merge_if_success.sh
-        - bash merge_if_success.sh
-
-
 stages:
   - name: Unit_test
   - name: Test
   - name: Build
   - name: Deploy
+    if: branch = master
 
   - name: Integration_to_other_repo
     if: branch = develop
@@ -49,5 +43,6 @@ stages:
 
 import:
   - credentials.yml
+  - .travis-merger.yml
   - hugo-helloworld/.travis.yml
   - liva-hugo-tryout/.travis.yml
