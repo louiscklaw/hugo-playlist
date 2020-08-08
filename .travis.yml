@@ -34,6 +34,7 @@ stages:
   - name: Test
   - name: Build
   - name: Deploy
+    if: branch = master
 
   - name: Integration_to_other_repo
     if: branch = develop
