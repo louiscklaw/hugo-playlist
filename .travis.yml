@@ -22,27 +22,10 @@ jobs:
       script:
         - echo 'helloworld'
 
-stages:
-  - name: Unit_test
-  - name: Test
-  - name: Build
-  - name: Deploy
-    if: branch = master
-
-  - name: Integration_to_other_repo
-    if: branch = develop
-
-  - name: Publish_dashboard
-    if: branch = master
-
-  - name: Merge
-    if: branch != master
-
-  - name: Cron
-
 
 import:
   - credentials.yml
   - .travis-merger.yml
+  - .travis-stages.yml
   - hugo-helloworld/.travis.yml
   - liva-hugo-tryout/.travis.yml

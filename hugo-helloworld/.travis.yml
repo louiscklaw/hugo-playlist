@@ -14,6 +14,9 @@ jobs:
     - stage: Deploy
       name: deploy (hugo-helloworld)
 
+      install:
+        - sudo dpkg -i ./hugo_extended_0.74.3_Linux-64bit.deb
+
       script:
         - cd hugo-helloworld
         -   hugo -D
