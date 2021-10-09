@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  helloworld index html homepage override
+  <pre>
+    {{ printf "%#v" $.Site }}
+    {{ printf "%#v" .Permalink }}
+    {{ printf "%#v" . }}
+  </pre>
+  <pre>
+    {{ range .Pages }}
+      {{/* The context, ".", is now each one of the pages as it goes through the loop */}}
+      {{ printf "%#v" . }}
+  {{ end }}
+
+  </pre>
+</body>
+</html>
