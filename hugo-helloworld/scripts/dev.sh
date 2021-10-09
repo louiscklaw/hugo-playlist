@@ -2,5 +2,4 @@
 
 set -ex
 
-
-hugo server --disableFastRender
+find . |entr -c -s "hugo server --disableFastRender"
