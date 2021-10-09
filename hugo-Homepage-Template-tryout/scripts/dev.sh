@@ -3,8 +3,4 @@
 set -ex
 
 
-hugo server \
-  --disableFastRender \
-  --gc \
-  --ignoreCache \
-  --cleanDestinationDir
+hugo server --disableFastRender
