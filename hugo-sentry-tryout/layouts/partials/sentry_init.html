@@ -1,0 +1,25 @@
+hello sentry init
+
+<!-- <script
+src="https://browser.sentry-cdn.com/6.13.3/bundle.min.js"
+integrity="sha384-sGMbmxgVprpEFMz6afNDyADd4Kav86v5Tvo2Y6w5t8tHUn1P1at3lCjN7IQo2c7E"
+crossorigin="anonymous"
+></script> -->
+
+<script
+  src="https://browser.sentry-cdn.com/6.13.3/bundle.tracing.min.js"
+  integrity="sha384-bMCNwkS0NNIDdeiv/LpGYQjDzjnZSqqN12IWUUyPlSTLXQloo4EAl9P9mW9AyVzw"
+  crossorigin="anonymous"
+></script>
+
+<script>
+  Sentry.init({
+    dsn: "https://17f908086ca94f08ad2be2559c5389d7@o321364.ingest.sentry.io/6001342",
+    integrations: [new Sentry.Integrations.BrowserTracing()],
+
+    // Set tracesSampleRate to 1.0 to capture 100%
+    // of transactions for performance monitoring.
+    // We recommend adjusting this value in production
+    tracesSampleRate: 1.0,
+  });
+</script>
