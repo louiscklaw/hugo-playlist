@@ -8,6 +8,21 @@ index helloworld
 
 {{< boxes/square >}}
 
+{{< youtube w7Ft2ymGmfc >}}
+
+{{< vimeo 146022717 >}}
+
+{{< tweet 877500564405444608 >}}
+
+[Neat]({{< ref "dir1/helloworld.md" >}})
+[Who]({{< relref "quote/first.md#who" >}})
+
+{{< gist spf13 7896402 "img.html" >}}
+
+{{< gist spf13 7896402 >}}
+
+{{< figure src="HelloWorld.svg" title="Steve Francia" >}}
+
 {{< highlight html >}}
 
 <section id="main">
@@ -18,4 +33,5 @@ index helloworld
     {{ end }}
   </div>
 </section>
+
 {{< /highlight >}}
