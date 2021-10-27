@@ -6,6 +6,12 @@ draft: false
 
 index helloworld
 
+{{< githubrepolink "louiscklaw/portfolio" >}}
+
+{{< wiki "https://en.wikipedia.org/wiki/GSM" GSM >}}
+
+{{< br >}}
+
 {{< boxes/square >}}
 
 {{< youtube w7Ft2ymGmfc >}}
