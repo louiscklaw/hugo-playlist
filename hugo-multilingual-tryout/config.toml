@@ -1,0 +1,48 @@
+# baseURL = "https://louiscklaw.github.io/hugo-playlist/"
+
+languageCode = "en-us"
+title = "My New Hugo Site"
+theme = "helloworld-theme"
+
+copyright = 'Everything is mine'
+defaultContentLanguage = 'en'
+
+[languages]
+  [languages.ar]
+    languagedirection = 'rtl'
+    title = 'مدونتي'
+    weight = 2
+
+  [languages.en]
+    title = 'My blog'
+    weight = 1
+    [languages.en.params]
+      linkedin = 'https://linkedin.com/whoever'
+
+  [languages.zh]
+    title = '我的仆'
+    weight = 1
+    [languages.zh.params]
+      linkedin = 'https://linkedin.com/whoever'
+
+  [languages.fr]
+    title = 'Mon blogue'
+    weight = 2
+    [languages.fr.params]
+      linkedin = 'https://linkedin.com/fr/whoever'
+      [languages.fr.params.navigation]
+        help = 'Aide'
+
+  [languages.sc]
+    title = '我的仆'
+    weight = 1
+    [languages.sc.params]
+      linkedin = 'https://linkedin.com/whoever'
+
+  [languages.pt-pt]
+    title = 'O meu blog'
+    weight = 3
+
+[params]
+  [params.navigation]
+    help = 'Help'
