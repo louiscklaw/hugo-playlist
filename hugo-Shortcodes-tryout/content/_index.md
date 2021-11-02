@@ -6,6 +6,12 @@ draft: false
 
 index helloworld
 
+{{< AccordionFaq "question 1" >}}
+
+answer 1
+
+{{< /AccordionFaq >}}
+
 {{< githubrepolink "louiscklaw/portfolio" >}}
 
 {{< wiki "https://en.wikipedia.org/wiki/GSM" GSM >}}
