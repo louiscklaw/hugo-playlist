@@ -1,0 +1,10 @@
+# baseURL = "https://louiscklaw.github.io/hugo-playlist/"
+
+languageCode = "en-us"
+title = "My New Hugo Site"
+theme = "helloworld-theme"
+
+[params]
+  # uBlogger theme version
+  backgroundColor = "tomato"
+  textColor = "white"

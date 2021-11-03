@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    {{ $style := resources.Get "sass/main.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint "sha512" }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+
+    {{ $js := resources.Get "js/main.js" | js.Build (dict "params" (dict "title" "https://jsonplaceholder.typicode.com/posts/1")) | resources.Minify | resources.Fingerprint "sha512" }}
+    <script src="{{ $js.Permalink }}"></script>
+
+    {{ $sassTemplate := resources.Get "sass/template.scss" }}
+    {{ $style := $sassTemplate | resources.ExecuteAsTemplate "main1.scss" . | resources.ToCSS }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+
+  </head>
+  <body>
+    helloworld index html homepage override
+
+    {{ $opts := dict "noComments" true }}
+    {{- $transpiled := resources.Get "js/babel_main.js" | babel $opts | resources.Minify | resources.Fingerprint "sha512" -}}
+
+    <script src="{{ $transpiled.Permalink }}"></script>
+
+
+    {{ $plugins := resources.Get "js/plugins.js" }}
+    {{ $global := resources.Get "js/global.js" }}
+    {{ $js := slice $plugins $global | resources.Concat "js/bundle.js" | resources.Minify | resources.Fingerprint "sha512" }}
+
+    <script src="{{ $js.Permalink }}"></script>
+
+
+
+  </body>
+</html>
