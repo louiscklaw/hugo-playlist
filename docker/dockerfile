@@ -1,6 +1,5 @@
 FROM debian:buster-slim
 
-
 ENV DEBIAN_FRONTEND noninteractive
 RUN ln -fs /usr/share/zoneinfo/Asia/Hong_Kong /etc/localtime
 
@@ -8,7 +7,7 @@ RUN sed -i 's/http:\/\/archive\.ubuntu\.com/http:\/\/ftp\.cuhk\.edu\.hk\/pub\/Li
   sed -i 's/http:\/\/security\.ubuntu\.com/http:\/\/ftp\.cuhk\.edu\.hk\/pub\/Linux/g' /etc/apt/sources.list
 
 RUN apt update &&\
-  apt-get install -qyy wget
+  apt-get install -qyy wget curl
 
 # https://github.com/gohugoio/hugo/releases
 
@@ -18,5 +17,12 @@ RUN cd /tmp &&\
 
 RUN apt update &&\
   apt-get install -qyy entr
+
+RUN cd ~ &&\
+  curl -sL https://deb.nodesource.com/setup_16.x -o /tmp/nodesource_setup.sh &&\
+  bash /tmp/nodesource_setup.sh &&\
+  apt update &&\
+  apt install -qyy nodejs &&\
+  node -v && npm -v
 
 CMD ['/bin/bash']
