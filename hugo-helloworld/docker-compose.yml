@@ -1,0 +1,6 @@
+services:
+  hugo_dev:
+    image: "logickee/hugo_dev"
+    restart: always
+    ports:
+      - 1313:1313
