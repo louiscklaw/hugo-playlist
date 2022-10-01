@@ -1,0 +1,14 @@
+{
+  "name": "hugo-helloworld",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "gitUpdate":"git add . && git commit -m\"upate hugo-helloworld,\" && git push",
+    "docker_rebuild":"docker compose up -d",
+    "into_docker":"docker compose exec -it hugo_dev bash"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
