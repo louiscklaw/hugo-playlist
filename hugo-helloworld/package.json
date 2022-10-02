@@ -6,7 +6,8 @@
   "scripts": {
     "gitUpdate":"git add . && git commit -m\"upate hugo-helloworld,\" && git push",
     "docker_rebuild":"docker compose up -d",
-    "into_docker":"docker compose exec -it hugo_dev bash"
+    "into_docker":"docker compose exec -it hugo_dev bash",
+    "clean":"rm -rf public .hugo_build.lock resources"
   },
   "keywords": [],
   "author": "",
